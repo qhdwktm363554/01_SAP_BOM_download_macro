@@ -24,9 +24,10 @@ try:
 
         pyautogui.typewrite(MLFB)
 
-        b = pyautogui.locateCenterOnScreen('b_execute.png')
-        pyautogui.moveTo(b)
-        pyautogui.click()
+        # b = pyautogui.locateCenterOnScreen('b_execute.png')
+        # pyautogui.moveTo(b)
+        # pyautogui.click()
+        pyautogui.press('f8')
         time.sleep(2.5)
 
         # ALT+Y+T+A+I 누름 / down 누르고 enter까지
