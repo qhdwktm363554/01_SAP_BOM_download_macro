@@ -5,7 +5,7 @@ from datetime import datetime
 
 CURRENT_DIR = os.getcwd()
 
-list = os.path.join(CURRENT_DIR,'BOM_list.xlsx')
+list = os.path.join(CURRENT_DIR,'00_BOM_LIST.xlsx')
 df = pd.read_excel(list)
 
 try:
@@ -68,7 +68,7 @@ try:
 
         time.sleep(0.5)
         pyautogui.typewrite(['enter'])
-        time.sleep(2)
+        time.sleep(3)
         print(MLFB, " is completed")
 
         # 처음으로 돌아간다
@@ -79,6 +79,7 @@ try:
 
 except KeyboardInterrupt:
     sys.exit()
+print("All_finished")
 
 # 아래는 stackoverflow에 물어본건데 아래꺼 설치하고 mouse를 upper-left corner로 움직이면 error 내면서 프로그램이 멈춘다.
 # import sys
