@@ -1,18 +1,53 @@
 import pandas as pd
 import os, glob, time, pyautogui
 import sys
-from PIL import ImageGrab
-from functools import partial
 from datetime import datetime
+import ctypes
 
-ImageGrab.grab = partial(ImageGrab.grab, all_screens = True)
 
 CURRENT_DIR = os.getcwd()
 
+
+
+completed = 2
+print(MLFB_len)
+
+time.sleep(1.0)
+pyautogui.press('enter')
+
+# EXCEL_FILE_NAMES = glob.glob(os.path.join(CURRENT_DIR, '*.xls'))
+EXCEL_FILE_NAMES = glob.glob('*.xls')
+print(EXCEL_FILE_NAMES)
+# if MLFB not in EXCEL_FILE_NAMES: break
+# else: 
+
+    
+
+
+# if msg == 1: 
+#     print("ok")
+
+
+
+
+
+
+# try:
+#     while True: 
+#         while True: 
+#             if keyboard.is_pressed('F3'):
+#                 a0 = pyautogui.locateCenterOnScreen('a0_activeSAP.PNG')
+#                 pyautogui.moveTo(a0)
+#                 pyautogui.click()
+
 list = os.path.join(CURRENT_DIR,'00_BOM_LIST.xlsx')
 df = pd.read_excel(list)
+df = pd.read_ex               
+count = 0
+MLFB_len = len(df)
 
 try:
+
     for i in df['MLFB'].index:
         # df['MLFB'].index로 loc 이용해서 mlfb name을 얻는다.
         MLFB = df.loc[i, 'MLFB']
@@ -80,6 +115,10 @@ try:
         pyautogui.moveTo(e)
         pyautogui.click()
         time.sleep(2)
+        count += 1
+        msg = ctypes.windll.user32.MessageBoxW(None, '{}/{}'.format(count, MLFB_len), "Download Status", 0)     # down 받은 MLFB 수 check 
+
+        
 
 except KeyboardInterrupt:
     sys.exit()

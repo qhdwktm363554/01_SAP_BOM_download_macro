@@ -1,0 +1,4 @@
+        completed_value = 2
+        max_value = 10
+        self.progressBar.setMaximum(max_value)      # 이건 추가해 준건데 받아야 할 BOM의 개수를 max_value로 한것이다.
+        self.progressBar.setProperty("value", completed_value)
