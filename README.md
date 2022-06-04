@@ -10,3 +10,6 @@ features:
   without this, program will not run with captured images on a different resolution monitor
   2. pyautogui: for macro program
   3. pandas: it does not necessarily to be pandas. I am just more familiar with pandas
+  4. Pause function: once mouse pointer goes very left up(screen coordinator is [zero, zero]), program execution will be stopped
+
+Code execution is recommended with command line since IDE is possibly eliminated when it is active on a screen
